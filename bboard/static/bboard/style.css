@@ -1,0 +1,47 @@
+/* Стили для заголовка */
+header h1 {
+    font-size: 40pt;
+    text-transform: uppercase;
+    text-align: center;
+    background: url("продам полдома.jpg") left / auto 100% no-repeat;
+}
+
+/* Стили для навигации */
+nav {
+    font-size: 16pt;
+    width: 150px;
+    float: left;
+}
+
+nav a {
+    display: block;
+    margin: 10px 0px;
+}
+
+/* Стили для основного контента */
+main {
+    margin-left: 170px;
+}/* Стили для заголовка */
+header h1 {
+    font-size: 40pt;
+    text-transform: uppercase;
+    text-align: center;
+    background: url("продам полдома.jpg") left / auto 100% no-repeat;
+}
+
+/* Стили для навигации */
+nav {
+    font-size: 16pt;
+    width: 150px;
+    float: left;
+}
+
+nav a {
+    display: block;
+    margin: 10px 0px;
+}
+
+/* Стили для основного контента */
+main {
+    margin-left: 170px;
+}

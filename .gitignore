@@ -1,0 +1,41 @@
+# Django
+*.log
+*.pot
+*.pyc
+__pycache__/
+db.sqlite3
+media/
+staticfiles/
+
+# Секретные файлы
+samplesite/nouse.py
+samplesite/local_settings.py
+
+# Environment
+.env
+.env.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# PyCharm
+*.iml
+
+# Project specific
+samplesite/__pycache__/
+bboard/__pycache__/
+bboard/migrations/__pycache__/
