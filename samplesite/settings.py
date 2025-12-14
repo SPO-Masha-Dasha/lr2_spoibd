@@ -15,6 +15,9 @@ from pathlib import Path
 
 load_dotenv()
 
+SITE_NAME = 'Доска объявлений'
+ITEMS_PER_PAGE = 10
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -27,7 +30,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = os.getenv('DEBUG') == 'True'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -40,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'relations',
 ]
 
 MIDDLEWARE = [
@@ -80,8 +84,14 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+    },
+    # Вторая бдшечка, для 3.6
+    'secondary': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'secondary_db.sqlite3',
     }
 }
+    
 
 
 # Password validation
@@ -108,7 +118,17 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ru-ru'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
+
+DATE_FORMAT = 'd E Y'  
+DATETIME_FORMAT = 'd E Y H:i' 
+SHORT_DATE_FORMAT = 'd.m.Y'  
+SHORT_DATETIME_FORMAT = 'd.m.Y H:i'
+
+DATE_INPUT_FORMATS = ['%d.%m.%Y']
+DATETIME_INPUT_FORMATS = ['%d.%m.%Y %H:%M']
+
+FIRST_DAY_OF_WEEK = 1
 
 USE_I18N = True
 
@@ -124,3 +144,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+DATABASE_ROUTERS = ['samplesite.db_router.SecondaryRouter']
